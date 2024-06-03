@@ -1,22 +1,49 @@
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
 .deliveryForm {
   background: #fff;
   padding: 60px 50px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px;
-  margin: 20px auto;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 0;
+}
+
+.scooterContainer {
+  position: relative;
+  height: 100vh;
 }
 
 .scooter {
   display: none;
-  position: absolute;
-  bottom: 15%;
-  left: 17%;
   max-height: 300px;
   animation: driveIn 4s ease-in-out forwards;
+  bottom: 0;
+  position: absolute;
+  bottom: 40px;
+  right: -100px;
+  z-index: 1;
 }
 
 @keyframes driveIn {
@@ -37,8 +64,23 @@
 }
 
 @media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .formWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .scooterContainer {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+
   .scooter {
     display: block;
-    max-height: 450px;
+    max-height: 400px;
   }
 }

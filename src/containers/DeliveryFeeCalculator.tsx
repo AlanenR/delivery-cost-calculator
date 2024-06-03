@@ -19,10 +19,14 @@ const DeliveryFeeCalculator = () => {
     orderTime: "",
   });
 
-  const numOfItemsHandler = (event: ChangeEvent<HTMLInputElement>) => setNumOfItems(parseInt(event.target.value) || 0);
-  const cartValueHandler = (event: ChangeEvent<HTMLInputElement>) => setCartValue(parseFloat(event.target.value) || 0);
-  const distanceHandler = (event: ChangeEvent<HTMLInputElement>) => setDistance(parseInt(event.target.value) || 0);
-  const orderTimeHandler = (event: ChangeEvent<HTMLInputElement>) => setOrderTime(event.target.value);
+  const numOfItemsHandler = (event: ChangeEvent<HTMLInputElement>) =>
+    setNumOfItems(parseInt(event.target.value) || 0);
+  const cartValueHandler = (event: ChangeEvent<HTMLInputElement>) =>
+    setCartValue(parseFloat(event.target.value) || 0);
+  const distanceHandler = (event: ChangeEvent<HTMLInputElement>) =>
+    setDistance(parseInt(event.target.value) || 0);
+  const orderTimeHandler = (event: ChangeEvent<HTMLInputElement>) =>
+    setOrderTime(event.target.value);
 
   const validateNumOfItems = (value: number) => {
     if (value <= 0) return "Number of items cannot be negative or 0.";
@@ -68,69 +72,73 @@ const DeliveryFeeCalculator = () => {
   };
 
   return (
-    <div>
-      <form
-        className={styles.deliveryForm}
-        onSubmit={handleSubmit}
-        data-testid="deliveryFeeCalculator"
-      >
-        <InputField
-          type="number"
-          id="numOfItems"
-          name="numOfItems"
-          label="Number of Items"
-          value={numOfItems}
-          onChange={numOfItemsHandler}
-          error={errors.numOfItems}
-          hasError={!!errors.numOfItems}
-          testId="numberOfItems"
-        ></InputField>
-        <InputField
-          type="number"
-          id="cartValue"
-          name="cartValue"
-          label="Cart Value"
-          value={cartValue}
-          symbol="€"
-          onChange={cartValueHandler}
-          error={errors.cartValue}
-          hasError={!!errors.cartValue}
-          testId="cartValue"
-        ></InputField>
-        <InputField
-          type="number"
-          id="distance"
-          name="distance"
-          label="Delivery Distance"
-          value={distance}
-          symbol="m"
-          onChange={distanceHandler}
-          error={errors.distance}
-          hasError={!!errors.distance}
-          testId="deliveryDistance"
-        ></InputField>
-        <InputField
-          type="datetime-local"
-          id="orderTime"
-          name="orderTime"
-          label="Order Time"
-          value={orderTime}
-          onChange={orderTimeHandler}
-          error={errors.orderTime}
-          hasError={!!errors.orderTime}
-          testId="orderTime"
-        ></InputField>
-        <SubmitBtn
-          cta="Calculate Delivery Fee"
-          testId="calculateDeliveryFeeBtn"
-        />
-        <DisplayFee fee={deliveryFee.toFixed(2)} testId="fee" />
-      </form>
-      <img
-        src={scooterImage}
-        className={styles.scooter}
-        alt="Delivery character"
-      />
+    <div className={styles.container}>
+      <div className={styles.formWrapper}>
+        <div className={styles.scooterContainer}>
+          <img
+            src={scooterImage}
+            className={styles.scooter}
+            alt="Delivery character"
+          />
+        </div>
+        <form
+          className={styles.deliveryForm}
+          onSubmit={handleSubmit}
+          data-testid="deliveryFeeCalculator"
+        >
+          <InputField
+            type="number"
+            id="numOfItems"
+            name="numOfItems"
+            label="Number of Items"
+            value={numOfItems}
+            onChange={numOfItemsHandler}
+            error={errors.numOfItems}
+            hasError={!!errors.numOfItems}
+            testId="numberOfItems"
+          ></InputField>
+          <InputField
+            type="number"
+            id="cartValue"
+            name="cartValue"
+            label="Cart Value"
+            value={cartValue}
+            symbol="€"
+            onChange={cartValueHandler}
+            error={errors.cartValue}
+            hasError={!!errors.cartValue}
+            testId="cartValue"
+          ></InputField>
+          <InputField
+            type="number"
+            id="distance"
+            name="distance"
+            label="Delivery Distance"
+            value={distance}
+            symbol="m"
+            onChange={distanceHandler}
+            error={errors.distance}
+            hasError={!!errors.distance}
+            testId="deliveryDistance"
+          ></InputField>
+          <InputField
+            type="datetime-local"
+            id="orderTime"
+            name="orderTime"
+            label="Order Time"
+            value={orderTime}
+            onChange={orderTimeHandler}
+            error={errors.orderTime}
+            hasError={!!errors.orderTime}
+            testId="orderTime"
+          ></InputField>
+          <SubmitBtn
+            cta="Calculate Delivery Fee"
+            testId="calculateDeliveryFeeBtn"
+          />
+          <DisplayFee fee={deliveryFee.toFixed(2)} testId="fee" />
+        </form>
+      </div>
     </div>
   );
 };
