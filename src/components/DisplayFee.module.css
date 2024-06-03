@@ -1,0 +1,10 @@
+.result-container {
+  position: relative;
+}
+
+.result {
+  color: #f98d2d;
+  font-size: 2rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+}
