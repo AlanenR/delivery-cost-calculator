@@ -1,13 +1,13 @@
 # Delivery Cost Calculator
 
-1. [About The App and Approach](#about)
+1. [About The App and Approach](#about-the-app-and-approach)
 2. [Technologies](#technologies)
 3. [Setup](#setup)
 4. [Testing](#testing)
 5. [Specification](#specification)
-6. [Frontend specifics](#frontendSpecifics)
+6. [Frontend specifics](#frontend-specifics)
 
-## About The App and Approach {#about}
+## About The App and Approach
 
 This App is a delivery cost calculator application.
 
@@ -24,11 +24,11 @@ The App shows the calculated delivery fee to the user in euros and rounds the fe
 This project is focused on the working calculator logic, testing the calculations, and good readability.
 
 
-## Technologies  {#technologies}
+## Technologies
 
 The App is build using the Create React App project with TypeScript (https://create-react-app.dev/docs/adding-typescript/), and the project supports CSS Modules (https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/).
 
-## Setup {#setup}
+## Setup
 
 ### Getting Started with Create React App
 
@@ -49,7 +49,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test` {#test}
+### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
@@ -80,7 +80,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Testing {#testing}
+## Testing
 
 All tests can be run following the standard ['npm test'](#test) command mentioned in the project setup.
 Unit tests are divided in three folders:
@@ -97,7 +97,7 @@ Unit tests are divided in three folders:
 
 
 
-## Specification {#specification}
+## Specification
 
 Rules for calculating a delivery fee:
 
@@ -115,7 +115,7 @@ Rules for calculating a delivery fee:
 - The delivery is free (0€) when the cart value is equal or more than 100€.
 During the Friday rush (3 - 7 PM UTC), the delivery fee (the total fee including possible surcharges) will be multiplied by 1.2x. However, the fee still cannot be more than the max (15€).
 
-## Frontend specifics {#frontendSpecifics}
+## Frontend specifics
 
 #### Input fields
 
